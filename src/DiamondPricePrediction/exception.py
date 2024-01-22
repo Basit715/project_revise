@@ -19,7 +19,7 @@ if __name__ == "__main__":
           a = 1/0
           
      except Exception as e:
-          raise Customexception(e,sys) 
+          raise Customexception(e,sys)   
      
      
       
