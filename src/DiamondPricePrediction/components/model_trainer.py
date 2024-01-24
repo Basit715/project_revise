@@ -22,7 +22,7 @@ class Model_Trainer:
      def __init__(self):
           self.model_trainer_config = ModelTrainingConfig()
      
-     def Initiate_model_training(self):
+     def Initiate_model_training(self,train_array,test_array):
           try:
                logging.info('splitting independant and dependant variables from train and test data')
                x_train,y_train,x_test,y_test = (
@@ -45,17 +45,16 @@ class Model_Trainer:
                logging.info(f'model report: {model_report}')
                best_model_score = max(sorted(model_report.values()))
                best_model_name = list(model_report.keys())[
-                    list(model_report.values()).index[best_model_score]
-               ]
-               
+                    list(model_report.values()).index(best_model_score) 
+               ] 
                best_model = models[best_model_name]
                print(f'Best model found, model name : {best_model_name}, R2 score : {best_model_score}')
                print('\n=================================\n')
-               logging.info(f'Best model found', 'model name : {best_model_name}, R2 score : {best_model_score}')
+               logging.info(f'Best model found, model name : {best_model_name}, R2 score : {best_model_score}') 
                save_object(
                     file_path = self.model_trainer_config.trained_model_file_path,
                     obj = best_model
-               )
+               ) 
                
                
                
