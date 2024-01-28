@@ -30,7 +30,6 @@ def predict():
         )
         # this is my final data
           final_data=data.get_data_as_dataframe()
-          print(final_data.head())
         
           predict_pipeline=PredictPipeline()
         
