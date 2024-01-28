@@ -12,7 +12,7 @@ from sklearn.linear_model import LinearRegression, Lasso,Ridge,ElasticNet
 
 @dataclass
 class ModelTrainingConfig:
-     trained_model_file_path = os.path.join('artifacts', 'pkl')
+     trained_model_file_path = os.path.join('artifacts', 'model.pkl')
      
      
 
@@ -26,7 +26,7 @@ class Model_Trainer:
           try:
                logging.info('splitting independant and dependant variables from train and test data')
                x_train,y_train,x_test,y_test = (
-                    train_array[:, :-1],
+                    train_array[:,:-1],
                     train_array[:,-1],
                     test_array[:,:-1],
                     test_array[:,-1]

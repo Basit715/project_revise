@@ -16,7 +16,7 @@ class PredictPipeline:
      def predict(self, features):
           try:
                preproccesor_path = os.path.join('artifacts', 'preproccesor.pkl')
-               model_path = os.path.join('artifacts', 'pkl')
+               model_path = os.path.join('artifacts', 'model.pkl') 
                
                preproccesor = load_object(preproccesor_path)
                model = load_object(model_path)
@@ -27,20 +27,21 @@ class PredictPipeline:
                return prediction
                
           except Exception as e:
+               logging.info('error in predict function')
                raise Customexception(e,sys)
           
           
 class CustomData:
      def __init__(self, carat:float, depth:float, table:float, x:float,y:float,z:float,cut:str,color:str,clarity:str):
-          self.carat = carat,
-          self.depth = depth,
-          self.table = table,
-          self.x = x,
-          self.y = y,
-          self.z = z,
-          self.cut = cut,
-          self.color = color,
-          self.clarity = clarity
+          self.carat = carat
+          self.depth = depth
+          self.table = table
+          self.x = x
+          self.y = y
+          self.z = z
+          self.cut = cut
+          self.color = color
+          self.clarity = clarity  
           
      def get_data_as_dataframe(self):
           try:

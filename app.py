@@ -30,6 +30,7 @@ def predict():
         )
         # this is my final data
           final_data=data.get_data_as_dataframe()
+          print(final_data.head())
         
           predict_pipeline=PredictPipeline()
         
@@ -37,7 +38,7 @@ def predict():
         
           result=round(pred[0],2)
         
-          return render_template("result.html",final_result=result) 
+          return render_template("result.html",final_result=result)  
 
 
 

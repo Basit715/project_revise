@@ -16,5 +16,5 @@ train_array,test_array = data_transformation.initiate_data_transformation(train_
 
 model_training = Model_Trainer()
 
-model_training.Initiate_model_training(train_array,test_array) 
+model_training.Initiate_model_training(train_array,test_array)   
 
